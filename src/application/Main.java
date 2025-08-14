@@ -33,7 +33,14 @@ public class Main {
 		
 		System.out.println("\n=== TEST 4: seller insert ===");
 		Seller newSeller = new Seller(null, "Clara Cyan", "clara@gmail.com", new Date(), 3000.00, new Department(3, "Fashion"));
-		sellerDao.insert(newSeller);
+		// sellerDao.insert(newSeller);
+		
+		System.out.println("\n=== TEST 5: seller update ===");
+		seller = sellerDao.findById(9);
+		seller.setName("Clara Cyan Grey");
+		sellerDao.update(seller);
+		System.out.println("Updated! Id = " + seller.getId());
+		
 	}
 
 }
